@@ -11,9 +11,10 @@ class ListingForm(forms.ModelForm):
 
 
 class ProfileForm(forms.ModelForm):
+    show_on_board = forms.BooleanField(
+        required=False, label="Show my name on the department board"
+    )
+
     class Meta:
         model = User
-        fields = ["first_name", "last_name", "email", "is_staff"]
-        labels = {
-            "is_staff": "Show my name on the department board",
-        }
+        fields = ["first_name", "last_name", "email"]
